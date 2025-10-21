@@ -19,3 +19,62 @@
   </div>
 </body>
 </html>
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Warna Background</title>
+    <style>
+        /* CSS untuk mengatur tampilan halaman */
+        body {
+            /* Efek transisi agar pergantian warna lebih mulus (0.5 detik) */
+            transition: background-color 0.5s ease;
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        /* Styling untuk tombol agar terlihat lebih bagus */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Klik tombol di bawah untuk mengganti warna background</h1>
+    
+    <button id="tombolUbahWarna">Ubah Warna</button>
+
+    <script>
+        // 1. Ambil elemen yang kita butuhkan dari HTML
+        const tombol = document.getElementById('tombolUbahWarna');
+        const bodyHalaman = document.body;
+
+        // 2. Atur warna awal halaman menjadi putih
+        bodyHalaman.style.backgroundColor = 'white';
+        bodyHalaman.style.color = 'black'; // Warna teks awal
+
+        // 3. Tambahkan "pendengar acara" pada tombol saat di-klik
+        tombol.addEventListener('click', function() {
+            // 4. Cek warna background saat ini
+            if (bodyHalaman.style.backgroundColor === 'white') {
+                // Jika warnanya PUTIH, ubah menjadi HITAM
+                bodyHalaman.style.backgroundColor = 'black';
+                bodyHalaman.style.color = 'white'; // Ganti warna teks jadi putih
+            } else {
+                // Jika warnanya HITAM, ubah kembali menjadi PUTIH
+                bodyHalaman.style.backgroundColor = 'white';
+                bodyHalaman.style.color = 'black'; // Ganti warna teks jadi hitam
+            }
+        });
+    </script>
+
+</body>
+</html>
